@@ -1,6 +1,6 @@
 /*------------------------------------------------------------------------------
 * File Name:   yanghui-triangle.c
-* Purpose:     杨辉三角形 
+* Purpose:     杨辉三角形
 *
 * Author:      Ke Wang
 *
@@ -26,10 +26,11 @@ int main()
 	printf("N=");
 	while (n>12)
 		scanf("%d",&n);
+	printf("\n");
 	for(i=0;i<=n;i++){
-		for(j=0;j<12-i;j++) 
-			printf(" ");
-		for(j=1;j<i+2;j++) 
+		for(j=0;j<12-i;j++)
+			printf("%3s"," ");  /* should be three blank spaces */
+		for(j=1;j<i+2;j++)
 			printf("%6d",c(i,j));
 		printf("\n");
 	}
