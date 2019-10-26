@@ -1,2 +1,2 @@
-# Clang-100-examples
-C language 100 examples
+# C语言趣味100例
+## 最简单的问题与算法
