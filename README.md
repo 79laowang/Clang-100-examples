@@ -1,6 +1,7 @@
 # C语言趣味100例
 ## 最简单的问题与算法
 **小问题，大智慧**
+
 ![#157500](https://placehold.it/15/157500?text=+)  [1.绘制余弦曲线](#例1)
 
 ### 例1.绘制余弦曲线.
@@ -34,4 +35,5 @@ int main()
 }
 ```
 **运行结果**
+![Image of cos-diagram](https://github.com/79laowang/Clang-100-examples/blob/master/imgs/cos-diagram.png)
 ---
