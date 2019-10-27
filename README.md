@@ -35,5 +35,6 @@ int main()
 }
 ```
 **运行结果**
+
 ![Image of cos-diagram](https://github.com/79laowang/Clang-100-examples/blob/master/imgs/cos-diagram.png)
 ---
