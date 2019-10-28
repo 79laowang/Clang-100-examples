@@ -2,8 +2,9 @@
 ## 最简单的问题与算法
 **小问题，大智慧**
 
-![#157500](https://placehold.it/15/157500?text=+)  [1.绘制余弦曲线](#例1)
-![#157500](https://placehold.it/15/157500?text=+)  [2.绘制余弦曲线和直线](#例2)
+![#157500](https://placehold.it/15/157500?text=+)  [1.绘制余弦曲线](#1)  
+
+![#157500](https://placehold.it/15/157500?text=+)  [2.绘制余弦曲线和直线](#2)
 
 ### 例1.绘制余弦曲线.
 　　在屏幕上用"\*"显示0°～360°的余弦cos(x)曲线
@@ -81,7 +82,7 @@ int main()
             if (x==m && x==n)  printf("+");   /* 直线与cos(x)相交时打印'+' */
             else if ( x==n )   printf("+");   /* 打印不相交时直线'+'图形  */
             else if (x==m || x==WIDTH-m)  printf("*");   /* 打印不相交时cos(x)'*'图形  */
-            else  printf(" ");    /×  其他情况打印空格占位  */
+            else  printf(" ");    /*  其他情况打印空格占位  */
             printf("\n");
     }
     return (0);
