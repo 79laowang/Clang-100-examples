@@ -4,6 +4,7 @@
 
 ![#157500](https://placehold.it/15/157500?text=+)  [1.绘制余弦曲线](#例1)  
 ![#98DEDE](https://placehold.it/15/98DEDE?text=+)  [2.绘制余弦曲线和直线](#例2)
+![#157500](https://placehold.it/15/157500?text=+)  [3.绘制圆](#例3)  
 
 ###  例1.
 **绘制余弦曲线.**
@@ -101,3 +102,43 @@ int main()
 　　如何实现正弦sin(x) 和余弦cos(x)曲线同时出现显示。
   
 ---
+
+###  例3.
+**绘制圆.**
+   
+　　在屏幕上用"****"画一个空心圆
+### *问题分析与解答设计:*   
+　　打印圆可利用图形的左右对称性。根据圆的方程：
+                                 R*R=X*X + Y*Y  
+    可以计算出圆上的每一个点的行和列的对应关系
+  
+**程序说明与注释**
+
+```C
+#include <stdio.h>
+#include <math.h>
+/* Compile with gcc -o draw-circle draw-circle.c -lm */
+int main()
+{
+   double y;
+   int x, m;
+
+   for (y=10; y>=-10; y--){ /* 圆的半径为10 */
+       /* 计算行y对应的列坐标m。需要调整2.5是屏幕纵横比例调节系数，因为屏幕的行距大于列距，不进行调整显示出来的将是椭圆 */
+       m = 2 * sqrt(100-y*y);    
+       for (x=1; x<30-m; x++) printf(" ");    /* 图形左侧空白控制 */ 
+       printf("*");                     /* 圆左侧打印*/ 
+       for (; x<30+m; x++) printf(" ");     /* 圆形空心部分控制 */   
+       printf("*\n");     /* 圆右侧打印 */ 
+}
+
+```
+**运行结果**
+
+![Image of cos-line-diagram](https://github.com/79laowang/Clang-100-examples/blob/master/imgs/cos-line-diagram.png)
+
+**思考题**  
+
+　　如何实现函数y=x^2图形和圆的图形叠加显示。
+  
+-----
