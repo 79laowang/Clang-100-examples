@@ -5,6 +5,7 @@
 ![#157500](https://placehold.it/15/157500?text=+)  [1.绘制余弦曲线](#例1)  
 ![#98DEDE](https://placehold.it/15/98DEDE?text=+)  [2.绘制余弦曲线和直线](#例2)  
 ![#157500](https://placehold.it/15/157500?text=+)  [3.绘制圆](#例3)  
+![#98DEDE](https://placehold.it/15/98DEDE?text=+)  [4.歌星大奖赛](#例4)  
 
 ###  例1.
 **绘制余弦曲线.**
@@ -141,4 +142,39 @@ int main()
 
 　　如何实现函数y=x^2图形和圆的图形叠加显示。
   
------
+---
+
+###  例4.
+歌星大奖赛.
+
+　　在歌星大奖赛中，有10个评委为参赛的选手打分，分数从1到100分。选手最后得分为：去掉一个最高分和一个最低分后，其余8个分数的平均值。编成实现。 
+### 问题分析与解答设计:
+　　算法比较简单，程序中判断最大、最小值的变量赋初值有些技巧。
+
+程序说明与注释
+
+```C
+#include <stdio.h>
+
+int main()
+{
+    int integer, i, max, min, sum;
+    max=-32768;
+    min=32768;
+    sum=0;
+    for (i=1; i<=10; i++){
+         printf("Input number %d=",i);
+         scanf("%d",&integer);
+         sum+=integer;
+         if (integer > max) max = integer;  /* 比大小，筛选出最高分 */
+         if (integer < min) min = integer;  /* 比大小，筛选出最低分 */
+    }
+    printf("Canceled max score: %d\nCanceled min score: %d\n", max, min);
+    printf("Average score: %d\n",(sum - max - min)/8);    /* 输出结果 */
+    return (0);
+}
+```
+**运行结果**
+
+
+**思考题**  
