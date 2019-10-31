@@ -6,6 +6,7 @@
 ![#98DEDE](https://placehold.it/15/98DEDE?text=+)  [2.绘制余弦曲线和直线](#例2)  
 ![#157500](https://placehold.it/15/157500?text=+)  [3.绘制圆](#例3)  
 ![#98DEDE](https://placehold.it/15/98DEDE?text=+)  [4.歌星大奖赛](#例4)  
+![#157500](https://placehold.it/15/157500?text=+)  [5.求最大约数](#例5)  
 
 ###  例1.
 **绘制余弦曲线.**
@@ -151,7 +152,7 @@ int main()
 ### 问题分析与解答设计:
 　　算法比较简单，程序中判断最大、最小值的变量赋初值有些技巧。
 
-程序说明与注释
+**程序说明与注释**
 
 ```C
 #include <stdio.h>
@@ -196,3 +197,49 @@ Average score: 90
 对评委的分数，找出最优（最接近平均分）和最差（和平均分差距最大）打分选择。  
 
 ---
+
+###  例5.
+输入一个数，求其中约数最大的三位是多少？  
+ 
+### 问题分析与解答设计:
+　　根据约数的定义，对于一个整数N，除去1和它自身之外，凡能整除N的数即为N的约数。因此，最简单的方法是用2到N-1之间的所有数去除N，即可以求出N的全部约数。本题只要求取约数中最大的三位数，则其取值范围可限定在100到999之间。
+
+**程序说明与注释**
+
+```C
+#include <stdio.h>
+
+int main()
+{
+    long i;
+    int j;
+    printf("Please input number >100:");
+    scanf("%ld",&i);
+    for(j=999;j>=100;j--)
+        if(i%j==0){
+            printf("The max factor with 3 digits in %ld is:%d.\n",i,j);
+            break;
+        }   
+    return (0);
+}
+```
+**运行结果**
+```Bash
+$ ./get-max-divisor 
+Please input number >100:456
+The max factor with 3 digits in 456 is:456.
+
+$ ./get-max-divisor 
+Please input number >100:99999
+The max factor with 3 digits in 99999 is:813.
+
+$ ./get-max-divisor 
+Please input number >100:888888
+The max factor with 3 digits in 888888 is:962.
+
+$ ./get-max-divisor 
+Please input number >100:123456
+The max factor with 3 digits in 123456 is:643.
+```
+---
+
