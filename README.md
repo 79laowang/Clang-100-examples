@@ -198,7 +198,7 @@ Average score: 90
 
 ---
 
-###  例4.
+###  例5.
 输入一个数，求其中约数最大的三位是多少？  
  
 ### 问题分析与解答设计:
@@ -215,7 +215,7 @@ int main()
     int j;
     printf("Please input number >100:");
     scanf("%ld",&i);
-    for(j=999;j>=100;j--)                                                                                                                                                
+    for(j=999;j>=100;j--)
         if(i%j==0){
             printf("The max factor with 3 digits in %ld is:%d.\n",i,j);
             break;
