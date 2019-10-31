@@ -147,7 +147,7 @@ int main()
 ###  例4.
 歌星大奖赛.
 
-　　在歌星大奖赛中，有10个评委为参赛的选手打分，分数从1到100分。选手最后得分为：去掉一个最高分和一个最低分后，其余8个分数的平均值。编成实现。 
+　　在歌星大奖赛中，有10个评委为参赛的选手打分，分数从1到100分。选手最后得分为：去掉一个最高分和一个最低分后，其余8个分数的平均值。编程实现。 
 ### 问题分析与解答设计:
 　　算法比较简单，程序中判断最大、最小值的变量赋初值有些技巧。
 
@@ -175,6 +175,24 @@ int main()
 }
 ```
 **运行结果**
-
+```Bash
+$ ./singer-contest 
+Input number 1=67
+Input number 2=89
+Input number 3=90
+Input number 4=92
+Input number 5=93
+Input number 6=95
+Input number 7=96
+Input number 8=99
+Input number 9=78
+Input number 10=88
+Canceled max score: 99
+Canceled min score: 67
+Average score: 90
+```
 
 **思考题**  
+对评委的分数，找出最优（最接近平均分）和最差（和平均分差距最大）打分选择。  
+
+---
