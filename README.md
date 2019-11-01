@@ -7,6 +7,7 @@
 ![#157500](https://placehold.it/15/157500?text=+)  [3.绘制圆](#例3)  
 ![#98DEDE](https://placehold.it/15/98DEDE?text=+)  [4.歌星大奖赛](#例4)  
 ![#157500](https://placehold.it/15/157500?text=+)  [5.求最大约数](#例5)  
+![#98DEDE](https://placehold.it/15/98DEDE?text=+)  [6.高次方数的尾数](#例6)  
 
 ###  例1.
 **绘制余弦曲线.**
@@ -199,6 +200,7 @@ Average score: 90
 ---
 
 ###  例5.
+求最大的约数
 输入一个数，求其中约数最大的三位是多少？  
  
 ### 问题分析与解答设计:
@@ -240,6 +242,55 @@ The max factor with 3 digits in 888888 is:962.
 $ ./get-max-divisor 
 Please input number >100:123456
 The max factor with 3 digits in 123456 is:643.
+```
+---
+
+###  例6.
+高次方数的尾数
+求13的13次方的最后三位数
+ 
+### 问题分析与解答设计:
+　　最直接的方法是：将13累乘13次方后截取最后三位即可。
+　　但是由于计算机所能表示的整数范围有限，用这种“正确”的算法不可能得到正确的结果。事实上，题目仅要求最后三位数的值，完全没有必要求13的13次方的完整结果。
+　　研究乘法的规律会发现：乘积的最后三位的值只与乘数和被乘数的后三位有关，与乘数和被乘数的高位无关。利用这一规律，可以大大简化程序。
+
+**程序说明与注释**
+
+```C
+#include <stdio.h>
+
+int main()
+{
+    int i, x, y, last=1;
+    printf("Input X and Y (X ** Y):");
+    scanf("%d ** %d", &x, &y);
+    for (i=1; i<=y;i++)
+        last = last * x%1000;
+    printf("The last 3 digits of %d ** %d is: %d\n",x,y,last%1000);
+    return (0);
+}
+```
+**运行结果**
+```Bash
+$ ./mantissa-of-higher-power
+Input X and Y (X ** Y):13**13
+The last 3 digits of 13 ** 13 is: 253
+
+$ ./mantissa-of-higher-power
+Input X and Y (X ** Y):55**55
+The last 3 digits of 55 ** 55 is: 375
+
+$ ./mantissa-of-higher-power
+Input X and Y (X ** Y):99**99
+The last 3 digits of 99 ** 99 is: 899
+
+$ ./mantissa-of-higher-power
+Input X and Y (X ** Y):1111**1111
+The last 3 digits of 1111 ** 1111 is: 711
+
+$ ./mantissa-of-higher-power
+Input X and Y (X ** Y):22222**22222
+The last 3 digits of 22222 ** 22222 is: 384
 ```
 ---
 
