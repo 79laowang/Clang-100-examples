@@ -346,7 +346,7 @@ int main()
 {
     int a , b, c, count=0;
     printf("There are different methods for XM to distribute books to 3 readers:\n");
-    for (a = 1; a <= 5; a++)  /* 穷举第一个人借5本书中的1本全部情况 */                                                                                                   
+    for (a = 1; a <= 5; a++)  /* 穷举第一个人借5本书中的1本全部情况 */ 
         for (b = 1; b <= 5; b++)   /* 穷举第二个人借5本书中的1本全部情况 */
             /* 当前两人借不同的书时，穷举第三个人借5本书中的1本全部情况*/
             for (c = 1; a != b && c <=5 ; c++)  
